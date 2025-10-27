@@ -14,7 +14,7 @@ app = FastAPI(title="Deepfake Detector API")
 # --- 1. ADD CORS FOR VERCEL ---
 # This allows your Vercel frontend to call your API
 origins = [
-    "https://YOUR-VERCEL-APP-NAME.vercel.app",  # <-- IMPORTANT: Put your Vercel URL here
+    "https://deepfake-detector-frontend-five.vercel.app",  # <-- IMPORTANT: Put your Vercel URL here
     "http://localhost:3000",                   # For local testing
 ]
 app.add_middleware(
