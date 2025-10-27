@@ -1,0 +1,17 @@
+# Ignore the entire frontend directory
+frontend/
+
+# Ignore node_modules wherever it might be
+**/node_modules
+
+# Ignore git history and configuration
+.git/
+.gitignore
+.dockerignore
+
+# Ignore Python virtual environment
+nvenv/
+.venv/
+
+# Ignore Python cache
+__pycache__/
