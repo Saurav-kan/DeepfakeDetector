@@ -1,7 +1,8 @@
 # DeepfakeDetector
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/saurav-kan/DeepfakeDetector)
 
-This repository contains a lightweight API for detecting deepfakes in images. The service is built with FastAPI and utilizes a fine-tuned EfficientNet-B0 model for binary classification (Real vs. Fake). The application is containerized with Docker and includes a CI/CD pipeline for automated deployment to GitHub Container Registry.
+This repository contains a lightweight API for detecting deepfakes in images. The service is built with FastAPI and utilizes a fine-tuned EfficientNet-B0
+model for binary classification (Real vs. Fake). The application is containerized with Docker and includes a CI/CD pipeline for automated deployment to
+GitHub Container Registry.
 
 ## How It Works
 
@@ -10,7 +11,8 @@ The application operates as a simple web service with a single prediction endpoi
 2.  **Model Loading**: On startup, the application downloads the pre-trained PyTorch model (`faces_best_model.pth`) from a pre-configured Amazon S3 bucket.
 3.  **Preprocessing**: When an image is uploaded, it is resized to 224x224, converted to a PyTorch tensor, and normalized.
 4.  **Inference**: The processed tensor is passed through the `efficientnet_b0` model.
-5.  **Prediction**: The model's single logit output is passed through a sigmoid function to get the probability of the image being 'Real'. The final prediction (`is_fake`) and confidence score are calculated based on this probability.
+5.  **Prediction**: The model's single logit output is passed through a sigmoid function to get the probability of the image being 'Real'. The final prediction
+6.   (`is_fake`) and confidence score are calculated based on this probability.
 
 ## API Endpoint
 
@@ -67,7 +69,8 @@ Accepts an image file and returns a prediction on whether it is a deepfake.
     ```bash
     docker run -p 8000:80 deepfake-api
     ```
-    > **Note**: The default application loads the model from a specific S3 bucket (`deepfake-model-storage-saurav-2025`). If you wish to use your own model, you will need to modify the `load_model` function in `main.py`.
+    > **Note**: The default application loads the model from a specific S3 bucket (`deepfake-model-storage-saurav-2025`).
+    >  If you wish to use your own model, you will need to modify the `load_model` function in `main.py`.
 
 ### Testing the API
 
